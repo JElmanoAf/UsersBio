@@ -1,4 +1,4 @@
-var mongoose = require(‘mongoose’);
+var mongoose = require('mongoose');
 //schema
 var bioSchema = mongoose.Schema({
 nome: {
@@ -23,7 +23,7 @@ default: Date.now
 }
 });
 // Export Bio Model
-var Bio = module.exports = mongoose.model(‘bio’, bioSchema);
+var Bio = module.exports = mongoose.model('bio', bioSchema);
 module.exports.get = function (callback, limit) {
 Bio.find(callback).limit(limit);
 }

@@ -1,16 +1,16 @@
 //Import Bio Model
-Bio = require(‘./RegistoModel’);
+Bio = require('./RegistoModel');
 //Para index
 exports.index = function (req, res) {
 Bio.get(function (err, bio) {
 if (err)
 res.json({
-status: “error”,
+status: "error",
 message: err
 });
 res.json({
-status: “OK”,
-message: “Obtidas Bios com Sucesso”,
+status: "OK",
+message: "Obtidas Bios com Sucesso",
 data: bio
 });
 });
@@ -27,7 +27,7 @@ bio.save(function (err) {
 if (err)
 res.json(err);
 res.json({
-message: “Nova Bio Adicionada!”,
+message: "Nova Bio Adicionada!",
 data: bio
 });
 });
@@ -38,7 +38,7 @@ Bio.findById(req.params.bio_id, function (err, bio) {
 if (err)
 res.send(err);
 res.json({
-message: ‘Detalhes da Bio’,
+message: 'Detalhes da Bio',
 data: bio
 });
 });
@@ -57,7 +57,7 @@ bio.save(function (err) {
 if (err)
 res.json(err)
 res.json({
-message: “Bio Updated Successfully”,
+message: "Bio Updated Successfully",
 data: bio
 });
 });
@@ -71,8 +71,8 @@ _id: req.params.bio_id
 if (err)
 res.send(err)
 res.json({
-status: “OK”,
-message: ‘Bio Eliminada!’
+status: "OK",
+message: 'Bio Eliminada!'
 });
 });
 };

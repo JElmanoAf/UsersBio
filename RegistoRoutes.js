@@ -1,19 +1,19 @@
 //initialize express router
-let router = require(‘express’).Router();
+let router = require('express').Router();
 //set default API response
-router.get(‘/’, function(req, res) {
+router.get('/', function(req, res) {
 res.json({
-status: ‘API Works’,
-message: ‘Welcome to FirstRest API’
+status: 'API Works',
+message: 'Welcome to FirstRest API'
 });
 });
 //Import Bio Controller
-var RegistoController = require(‘./RegistoController’);
+var RegistoController = require('./RegistoController');
 // Bio routes
-router.route(‘/bio’)
+router.route('/bio')
 .get(RegistoController.index)
 .post(RegistoController.add);
-router.route(‘/bio/:bio_id’)
+router.route('/bio/:bio_id')
 .get(RegistoController.view)
 .patch(RegistoController.update)
 .put(RegistoController.update)
